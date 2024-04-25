@@ -7,21 +7,13 @@ fn digit_to_layer(input: u8) -> Result<impl Iterator<Item = f64>, String> {
         return Err(format!("Input value: {} must be between 0 and 9", input));
     }
 
-    let mut count = 0;
-    Ok(iter::from_fn(move || {
-        let out = if count == input { 1.0 } else { 0.0 };
-        count += 1;
-        Some(out)
-    })
-    .take(10))
+    Ok((0..=9).map(move |x| if x == input {1.0} else {0.0}))
 }
 
 fn layer_to_digit(input: &Layer) -> Result<u8, &str> {
     if input.len() != 10 {
         return Err("Input length must be 10 for a 1:1 mapping");
     }
-
-    // println!("{:?}", input);
 
     input
         .inspect()
