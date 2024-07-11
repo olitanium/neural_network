@@ -6,12 +6,6 @@
 //! the actual training result (and a more readable label for convenience)
 
 #![feature(array_windows)]
-#![feature(lint_reasons)]
-#![allow(incomplete_features)]
-#![feature(generic_const_exprs)]
-
-pub mod matrix;
-pub mod vector;
 
 use core::{
     fmt::Debug,
