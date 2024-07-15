@@ -1,0 +1,1 @@
+This neural network library (and example main) uses layers and neurons to learn based on test data and test answers. Each neuron in each layer takes a weighted sum of the previous layers output, layer by layer interpreting the inputs to obtain an output. This output is scored against the expected result and the parameters are tweaked to get the model closer to 100% accuracy.
